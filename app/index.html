@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Frisbee</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-controller="ScheduleListCtrl">
+
+  <table>
+    <thead>
+      <tr>
+          <th>Monday 18 March</th>
+          <th>Team</th>
+          <th>Result</th>
+          <th>Team</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="appointment in schedule">
+        <td>{{appointment.date}}</td>
+        <td>{{appointment.team1}}</td>
+        <td>{{appointment.team1Score}} - {{appointment.team2Score}}</td>
+        <td>{{appointment.team2}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+
+</body>
+</html>
