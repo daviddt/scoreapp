@@ -7,9 +7,9 @@ FRISBEE.controller('ScheduleListCtrl', function ($scope, $http)) {
 
   success(function(data) {
     $scope.schedule = data;
-  }).
+  })
 
-  error(function(data, status, headers, config) {
+  .error(function(data, status, headers, config) {
   	console.log('ScheduleListCtrl http get error')
   });
  
