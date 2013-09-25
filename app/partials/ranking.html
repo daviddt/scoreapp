@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+        <th>Points won</th>
+        <th>Points lost</th>
+        <th>+/-</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="rank in ranking | orderBy: '-win' ">
+      <td>{{rank.team}}</td>
+      <td>{{rank.win}}</td>
+      <td>{{rank.lost}}</td>
+      <td>{{rank.pointsWin}}</td>
+      <td>{{rank.pointsLost}}</td>
+      <td>{{rank.pointsWin - rank.pointsLost}}</td>
+    </tr>
+  </tbody>
+</table>

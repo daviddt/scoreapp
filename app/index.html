@@ -1,19 +1,30 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="frisbee">
 <head>
   <meta charset="utf-8">
   <title>Frisbee</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body ng-controller="ScheduleListCtrl">
+<body ng-controller="MainCtrl">
+	<header>
+	    <h1><span>Tournament: </span>Amsterdam Ultimate Autumn</h1>
+	</header>
+	<nav>
+		<ul class="nav nav-justified nav-tabs">
+			<li><a href="#/schedule">Schedule</a></li>
+			<li><a href="#/game">Game</a></li>
+			<li><a href="#/ranking">Ranking</a></li>
+		</ul>
+	</nav>
 
-  <a href="#/schedule">LOL</a>
+  	<section ng-view>
 
-  
+  	</section>
 
-  <script src="lib/angular/angular.js"></script>
-  <script src="js/controllers.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
 
 </body>
 </html>

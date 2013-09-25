@@ -1,14 +1,15 @@
-<table>
+Search: <input type="text" ng-model="searchText">
+<table class="table table-striped">
   <thead>
     <tr>
-        <th>Monday 18 March</th>
-        <th>Team</th>
-        <th>Result</th>
-        <th>Team</th>
+      <th>Monday 18 March</th>
+      <th>Team</th>
+      <th>Result</th>
+      <th>Team</th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="appointment in schedule">
+    <tr ng-repeat="appointment in schedule | orderBy: 'team1' | filter: searchText ">
       <td>{{appointment.date}}</td>
       <td>{{appointment.team1}}</td>
       <td>{{appointment.team1Score}} - {{appointment.team2Score}}</td>
