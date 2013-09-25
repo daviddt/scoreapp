@@ -35,8 +35,6 @@ console.log('> controller.js');
 		  .error(function(data, status, headers, config) {
 		  	console.log('GameCtrl http get error')
 		  });
-
-		  $scope.orderScore = 'score';
 	 
 	});
 
@@ -51,8 +49,6 @@ console.log('> controller.js');
 		  .error(function(data, status, headers, config) {
 		  	console.log('RankingCtrl http get error')
 		  });
-
-		$scope.orderPointsWin = 'pointsWin';
 	 
 	});
 
