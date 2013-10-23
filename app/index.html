@@ -2,19 +2,23 @@
 <html lang="en" ng-app="frisbee">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Frisbee</title>
-  <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-controller="MainCtrl">
-	<header>
-	    <h1><span>Tournament: </span>Amsterdam Ultimate Autumn</h1>
-	</header>
-	<nav>
-		<ul class="nav nav-justified nav-tabs">
-			<li><a href="#/schedule">Schedule</a></li>
-			<li><a href="#/game">Game</a></li>
-			<li><a href="#/ranking">Ranking</a></li>
+	<nav class="navbar-inverse navbar-fixed-top" role="navigation">
+		<ul class="nav navbar-nav nav-justified">
+			<li ng-class="{active:isActive('/schedule')}">
+				<a href="#/schedule">Schedule</a>
+			</li>
+			<li ng-class="{active:isActive('/game')}">
+				<a href="#/game">Game</a>
+			</li>
+			<li ng-class="{active:isActive('/ranking')}">
+				<a href="#/ranking">Ranking</a>
+			</li>
 		</ul>
 	</nav>
 

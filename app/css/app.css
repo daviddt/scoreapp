@@ -1,6 +1,51 @@
-/* app css stylesheet */
-
-body {
-  padding-top: 20px;
+﻿body { 
+	/* padding-top for the navbar-fixed-top */
+	padding-top: 50px; 
+}
+a {
+	color: black;
+}
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+/* Remove table borders cause can't be clickable. 
+Change links from inline to block so they fill up the whole table cell.
+According to w3c specifications table is best for data not lists! (even do lists work easier).*/
+table {
+	/* This not working yet */
+	border: none;
+	border-spacing: 0;
+}
+table a {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
+/* The .nav-justifed class is to be used with nav-tabs / nav-pills (see bootstrap docs) and not nav-bar.
+However by adding the following css nav-justifiednow plays nice with navbar-nav 
+Also to fix the mobile version from aligning the items vertically */
+.navbar-nav.nav-justified > li{
+    float: none;
+    display: table-cell;
+	width: 1%;
+}
+.navbar-nav {
+	margin: 0;
+}
+.navbar-nav > li > a {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+/* Loading icon */
+.loading {
+	background: url('../img/ajax-loader-white.gif') no-repeat;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -16px;
+	margin-left: -16px;
+}
