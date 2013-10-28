@@ -1,41 +1,19 @@
-<header>
-  <h2>Pool A - Score: Boomsquad vs. Burning Snow</h2>
-</header>
-<table class="table table-striped">
+<div class="loading" ng-show="loading"></div>
+<table class="table table-striped table-hover">
   <theader>
     <tr>
-        <th>Team</th>
-        <th>Result</th>
-        <th>Team</th>
-    </tr>
-  </theader>
-
-  <tbody>
-    <tr>
-        <td class="winner">Boomsquad</td>
-        <td>15 - 8</td>
-        <td>Burning Snow</td>
-    </tr>
-  </tbody>
-
-</table>
-
-<table class="table table-striped">
-  <theader>
-    <tr>
-      <th>Score</th>
       <th>Team</th>
       <th>Points</th>
       <th>Team</th>
     </tr>
   </theader>
-
   <tbody>
-    <tr ng-repeat="item in game | orderBy: score ">
-        <td>{{item.score}}</td>
-        <td>{{item.team1}}</td>
-        <td>{{item.team1Score}} - {{item.team2Score}}</td>
-        <td>{{item.team2}}</td>
+    <tr ng-repeat="item in data">
+        <td><a href="#/game/{{item.id}}">{{item.team_1.name}}</a></td>
+        <td><a href="#/game/{{item.id}}">{{item.team_1_score}} - {{item.team_2_score}}</a></td>
+        <td><a href="#/game/{{item.id}}">{{item.team_2.name}}</a></td>
     </tr>
   </tbody>
 </table>
+
+

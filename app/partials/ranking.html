@@ -1,3 +1,4 @@
+<div class="loading" ng-show="loading"></div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -10,13 +11,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="rank in ranking | orderBy: '-win' ">
-      <td>{{rank.team}}</td>
-      <td>{{rank.win}}</td>
-      <td>{{rank.lost}}</td>
-      <td>{{rank.pointsWin}}</td>
-      <td>{{rank.pointsLost}}</td>
-      <td>{{rank.pointsWin - rank.pointsLost}}</td>
+    <tr ng-repeat="item in data">
+      <td>{{item.team.name}}</td>
+      <td>{{item.wins}}</td>
+      <td>{{item.losses}}</td>
+      <td>{{item.points_scored}}</td>
+      <td>{{item.points_allowed}}</td>
+      <td>{{item.plus_minus}}</td>
     </tr>
   </tbody>
 </table>
