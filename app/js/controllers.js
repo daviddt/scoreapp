@@ -8,13 +8,17 @@
 
 	var frisbeeControllers = angular.module('frisbeeControllers', []);
 
-	var access_token = "82996312dc";
-	var tournamentID = "19389";
+	/* Dit kan beter in een config object */
+	
+	var config = {
+		acces_token : "82996312dc",
+		tournamentID : "19389"
+	}
 
 	frisbeeControllers.controller('MainCtrl', function ($scope, $location) {
 		$scope.isActive = function(route) {
-        	return $location.path().indexOf(route) !== -1;
-    	}
+        		return $location.path().indexOf(route) !== -1;
+    		}
 	  
 	});
 
@@ -45,7 +49,7 @@
 
 	frisbeeControllers.controller('updateCtrl', function ($scope, $http, $routeParams) {
 		console.log('> updateCtrl');
-		$scope.game = {};
+		/* scoppe .game kan weg */
 
 		$scope.update = function(game) {
 			$scope.game = angular.copy(game);
@@ -59,9 +63,7 @@
 				'Authorization': 'bearer 82996312dc'
 			};
 			//82996312dc
-			$scope.gameID;
 			$scope.start = new Date();
-			$scope.end;			
 
 			$scope.postData = {
 				'game_id': $routeParams.gameId,
@@ -104,27 +106,28 @@
 			'Accept': 'application/json',
 			'Authorization': 'bearer 82996312dc' 
 		};
-		$scope.gameID;
 		$scope.postData = {
 			'game_id': $routeParams.gameId,
 			'limit': 1
 		};
 		$scope.start = new Date();
-		$scope.end;
 
 			
-		$http({method: $scope.method, url: $scope.url, headers: $scope.headers, cache: false}).
-	      success(function(data, status) {
-	      	$scope.end = new Date();
-	      	console.log("Operation took " + ($scope.end.getTime() - $scope.start.getTime()) + " msec. Status " + status);
-	      	console.log(data.objects[0]);
-	        $scope.status = status;
-	        $scope.data = data.objects[0];
-	      })
-	      .error(function(data, status) {
-	        $scope.data = data || "Request failed";
-	        $scope.status = status;
-	    });
+		$http({method: $scope.method, 
+		       url: $scope.url, 
+		       headers: $scope.headers, 
+		       cache: false}).
+	        success(function(data, status) {
+		      	$scope.end = new Date();
+		      	console.log("Operation took " + ($scope.end.getTime() - $scope.start.getTime()) + " msec. Status " + status);
+		      	console.log(data.objects[0]);
+		        $scope.status = status;
+		        $scope.data = data.objects[0];
+		      })
+	       .error(function(data, status) {
+	                $scope.data = data || "Request failed";
+	                $scope.status = status;
+	       });
 	});
 
 	frisbeeControllers.controller('GameCtrl', function ($scope, $http) {
@@ -137,11 +140,9 @@
 			'Accept': 'application/json',
 			'Authorization': 'bearer 82996312dc' 
 		};
-		$scope.gameID;
 		$scope.start = new Date();
-		$scope.end;
-
-			
+	
+		/* tabbing goed zetten */		
 		$http({method: $scope.method, url: $scope.url, headers: $scope.headers, cache: false}).
 	      success(function(data, status) {
 	      	$scope.loading = false;
